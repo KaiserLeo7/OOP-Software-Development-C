@@ -1,0 +1,11 @@
+1. The reason for using the vector container rather than any other available in the STL.
+
+vector containers self manage when in comes to allocation of memory, and close to what an array is.
+
+2.Why there is no need to deallocate the dynamically allocated memory in your own code.
+
+vectors take care of deallocation themselves.
+
+3. How the range-based for simplifies coding in this case.
+
+range-based for loop is automatic 

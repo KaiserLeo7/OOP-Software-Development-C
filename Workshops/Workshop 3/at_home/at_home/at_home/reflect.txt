@@ -1,0 +1,29 @@
+1. Reason for specializing the sum() member function.
+
+sum was specialized to concatinate rathen then add strings
+
+V sum(const L& label, const V& sum) const {
+	
+return LVPair<L, V>::BaseValue() + sum;
+			
+}
+
+template<>
+	std::string SummableLVPair<std::string, std::string>::sum(const std::string& label, const std::string& value) const
+	{
+		return (value + " " + LVPair<std::string, std::string>::BaseValue());
+	}
+
+2. Reason for specializing the initial value for a summation.
+
+We specialize the initial value to control if its a string or an int
+template<>
+	std::string SummableLVPair<std::string, std::string>::init_value = "";
+	
+	template<> 
+	int SummableLVPair<std::string, int>::init_value = 0;
+
+3. Reason for defining the class variable outside the class definition.
+
+so that we can redeclare each iteration
+

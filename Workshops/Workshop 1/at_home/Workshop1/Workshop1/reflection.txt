@@ -1,0 +1,29 @@
+1.The difference between internal and external linkage using examples from your code
+
+Using keyword extern to direct the program to the existance of the INITIAL variable in another .cpp file.
+
+extern int INITIAL;
+
+The keyword static allows for the value of a variable to last in its scope the duration of the program.
+
+2.The execution effect of the code in the process() function that creates the String object
+which is inserted into standard output (which member function(s) does this code call)
+
+Process.cpp creates the String class and then uses the friend overloaded operator << to output the courses
+
+3.The changes that you made in updating your String class
+
+To update the String class to be able to accept any length courses I first removed the MAX definition, and m_course became a char*,
+then in the .cpp file we needed to get the length of the incoming course, allocate new memory for it using that length, 
+and use a simple for loop to copy the incoming course into the newly allocated memory m_course.
+
+
+Quiz 2 Corrections
+
+10.b
+11.a
+12.a
+15.e
+16.e
+
+

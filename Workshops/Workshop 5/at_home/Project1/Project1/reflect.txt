@@ -1,0 +1,64 @@
+1. The difference between the implementation of a functor and a lambda expression 
+
+Functor are implemented when you overload the brackets surrounding parameters, and allow the use of an object likea function. 
+Lambda expression is a function with the same flexibility of a variable. It is an anonymous function.
+
+2. A list of the exceptions that you have reported and the cases where you terminated execution 
+
+
+		//one arg constructor
+		KVList(int n) {
+		
+			if (n > 0) {
+			
+				maxNumOfElements = n;
+				main_list = new L[n];
+			}
+			else {
+			
+				throw "!!!Number of elements received in the constructor is not Positive-Valued!!!";
+			}
+		}
+
+
+
+		//operator overload
+		const L& operator[](size_t i) const {
+		
+			if (i > numOfElements) {
+			
+				throw "!!!Index passed to the subscipting operator out-of-bounds!!!";
+			}
+			return main_list[i];
+		}
+
+
+		//lambda expression
+		gradeList.display(std::cout, [](float grade) {
+
+			std::string letterGrade;
+			if (grade >= 90 && grade <= 100)
+				letterGrade = "A+";
+			else if (grade >= 80 && grade <= 89.9)
+				letterGrade = "A ";
+			else if (grade >= 75 && grade <= 79.9)
+				letterGrade = "B+";
+			else if (grade >= 70 && grade <= 74.9)
+				letterGrade = "B ";
+			else if (grade >= 65 && grade <= 69.9)
+				letterGrade = "C+";
+			else if (grade >= 60 && grade <= 64.9)
+				letterGrade = "C ";
+			else if (grade >= 55 && grade <= 59.9)
+				letterGrade = "D+";
+			else if (grade >= 50 && grade <= 54.9)
+				letterGrade = "D ";
+			else if (grade >= 0 && grade <= 49.9)
+				letterGrade = "F ";
+			else {
+				std::atexit(exit_2);
+				std::exit(2);
+			}
+			return letterGrade;
+		});
+	}
